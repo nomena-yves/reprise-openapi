@@ -1,0 +1,29 @@
+openapi: 3.1.0
+info:
+  title: find dish
+  version: 1.0.0
+paths:
+  '/ingredient':
+    get:
+      parameters:
+        - id:
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: the dish
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: integer
+                  name:
+                    type: string
+                  ingredient:
+                    type: array
+                    items:
+                      type: string
